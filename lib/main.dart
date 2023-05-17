@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: const Locale("uz"),
-      title: 'Mulk',
+      title: 'Al Mulk',
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.green,
