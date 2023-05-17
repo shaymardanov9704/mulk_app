@@ -21,10 +21,7 @@ mixin _$MainEvent {
     required TResult Function() init,
     required TResult Function() play,
     required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
+    required TResult Function() loopMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,10 +29,7 @@ mixin _$MainEvent {
     TResult? Function()? init,
     TResult? Function()? play,
     TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
+    TResult? Function()? loopMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,10 +37,7 @@ mixin _$MainEvent {
     TResult Function()? init,
     TResult Function()? play,
     TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
+    TResult Function()? loopMode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,9 +46,6 @@ mixin _$MainEvent {
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
     required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
     required TResult Function(_loopMode value) loopMode,
   }) =>
       throw _privateConstructorUsedError;
@@ -66,9 +54,6 @@ mixin _$MainEvent {
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
     TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
     TResult? Function(_loopMode value)? loopMode,
   }) =>
       throw _privateConstructorUsedError;
@@ -77,9 +62,6 @@ mixin _$MainEvent {
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
     TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
   }) =>
@@ -141,10 +123,7 @@ class _$_init implements _init {
     required TResult Function() init,
     required TResult Function() play,
     required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
+    required TResult Function() loopMode,
   }) {
     return init();
   }
@@ -155,10 +134,7 @@ class _$_init implements _init {
     TResult? Function()? init,
     TResult? Function()? play,
     TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
+    TResult? Function()? loopMode,
   }) {
     return init?.call();
   }
@@ -169,10 +145,7 @@ class _$_init implements _init {
     TResult Function()? init,
     TResult Function()? play,
     TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
+    TResult Function()? loopMode,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -187,9 +160,6 @@ class _$_init implements _init {
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
     required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
     required TResult Function(_loopMode value) loopMode,
   }) {
     return init(this);
@@ -201,9 +171,6 @@ class _$_init implements _init {
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
     TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
     TResult? Function(_loopMode value)? loopMode,
   }) {
     return init?.call(this);
@@ -215,9 +182,6 @@ class _$_init implements _init {
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
     TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
   }) {
@@ -270,10 +234,7 @@ class _$_play implements _play {
     required TResult Function() init,
     required TResult Function() play,
     required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
+    required TResult Function() loopMode,
   }) {
     return play();
   }
@@ -284,10 +245,7 @@ class _$_play implements _play {
     TResult? Function()? init,
     TResult? Function()? play,
     TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
+    TResult? Function()? loopMode,
   }) {
     return play?.call();
   }
@@ -298,10 +256,7 @@ class _$_play implements _play {
     TResult Function()? init,
     TResult Function()? play,
     TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
+    TResult Function()? loopMode,
     required TResult orElse(),
   }) {
     if (play != null) {
@@ -316,9 +271,6 @@ class _$_play implements _play {
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
     required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
     required TResult Function(_loopMode value) loopMode,
   }) {
     return play(this);
@@ -330,9 +282,6 @@ class _$_play implements _play {
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
     TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
     TResult? Function(_loopMode value)? loopMode,
   }) {
     return play?.call(this);
@@ -344,9 +293,6 @@ class _$_play implements _play {
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
     TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
   }) {
@@ -400,10 +346,7 @@ class _$_pause implements _pause {
     required TResult Function() init,
     required TResult Function() play,
     required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
+    required TResult Function() loopMode,
   }) {
     return pause();
   }
@@ -414,10 +357,7 @@ class _$_pause implements _pause {
     TResult? Function()? init,
     TResult? Function()? play,
     TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
+    TResult? Function()? loopMode,
   }) {
     return pause?.call();
   }
@@ -428,10 +368,7 @@ class _$_pause implements _pause {
     TResult Function()? init,
     TResult Function()? play,
     TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
+    TResult Function()? loopMode,
     required TResult orElse(),
   }) {
     if (pause != null) {
@@ -446,9 +383,6 @@ class _$_pause implements _pause {
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
     required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
     required TResult Function(_loopMode value) loopMode,
   }) {
     return pause(this);
@@ -460,9 +394,6 @@ class _$_pause implements _pause {
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
     TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
     TResult? Function(_loopMode value)? loopMode,
   }) {
     return pause?.call(this);
@@ -474,9 +405,6 @@ class _$_pause implements _pause {
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
     TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
   }) {
@@ -492,402 +420,10 @@ abstract class _pause implements MainEvent {
 }
 
 /// @nodoc
-abstract class _$$_stopCopyWith<$Res> {
-  factory _$$_stopCopyWith(_$_stop value, $Res Function(_$_stop) then) =
-      __$$_stopCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_stopCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res, _$_stop>
-    implements _$$_stopCopyWith<$Res> {
-  __$$_stopCopyWithImpl(_$_stop _value, $Res Function(_$_stop) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_stop implements _stop {
-  _$_stop();
-
-  @override
-  String toString() {
-    return 'MainEvent.stop()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_stop);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() play,
-    required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
-  }) {
-    return stop();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? play,
-    TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
-  }) {
-    return stop?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? play,
-    TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
-    required TResult orElse(),
-  }) {
-    if (stop != null) {
-      return stop();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_init value) init,
-    required TResult Function(_play value) play,
-    required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
-    required TResult Function(_loopMode value) loopMode,
-  }) {
-    return stop(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_init value)? init,
-    TResult? Function(_play value)? play,
-    TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
-    TResult? Function(_loopMode value)? loopMode,
-  }) {
-    return stop?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_init value)? init,
-    TResult Function(_play value)? play,
-    TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
-    TResult Function(_loopMode value)? loopMode,
-    required TResult orElse(),
-  }) {
-    if (stop != null) {
-      return stop(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _stop implements MainEvent {
-  factory _stop() = _$_stop;
-}
-
-/// @nodoc
-abstract class _$$_nextCopyWith<$Res> {
-  factory _$$_nextCopyWith(_$_next value, $Res Function(_$_next) then) =
-      __$$_nextCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_nextCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res, _$_next>
-    implements _$$_nextCopyWith<$Res> {
-  __$$_nextCopyWithImpl(_$_next _value, $Res Function(_$_next) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_next implements _next {
-  _$_next();
-
-  @override
-  String toString() {
-    return 'MainEvent.next()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_next);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() play,
-    required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
-  }) {
-    return next();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? play,
-    TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
-  }) {
-    return next?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? play,
-    TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
-    required TResult orElse(),
-  }) {
-    if (next != null) {
-      return next();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_init value) init,
-    required TResult Function(_play value) play,
-    required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
-    required TResult Function(_loopMode value) loopMode,
-  }) {
-    return next(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_init value)? init,
-    TResult? Function(_play value)? play,
-    TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
-    TResult? Function(_loopMode value)? loopMode,
-  }) {
-    return next?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_init value)? init,
-    TResult Function(_play value)? play,
-    TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
-    TResult Function(_loopMode value)? loopMode,
-    required TResult orElse(),
-  }) {
-    if (next != null) {
-      return next(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _next implements MainEvent {
-  factory _next() = _$_next;
-}
-
-/// @nodoc
-abstract class _$$_previousCopyWith<$Res> {
-  factory _$$_previousCopyWith(
-          _$_previous value, $Res Function(_$_previous) then) =
-      __$$_previousCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_previousCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$_previous>
-    implements _$$_previousCopyWith<$Res> {
-  __$$_previousCopyWithImpl(
-      _$_previous _value, $Res Function(_$_previous) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_previous implements _previous {
-  _$_previous();
-
-  @override
-  String toString() {
-    return 'MainEvent.previous()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_previous);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() play,
-    required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
-  }) {
-    return previous();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? play,
-    TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
-  }) {
-    return previous?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? play,
-    TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
-    required TResult orElse(),
-  }) {
-    if (previous != null) {
-      return previous();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_init value) init,
-    required TResult Function(_play value) play,
-    required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
-    required TResult Function(_loopMode value) loopMode,
-  }) {
-    return previous(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_init value)? init,
-    TResult? Function(_play value)? play,
-    TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
-    TResult? Function(_loopMode value)? loopMode,
-  }) {
-    return previous?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_init value)? init,
-    TResult Function(_play value)? play,
-    TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
-    TResult Function(_loopMode value)? loopMode,
-    required TResult orElse(),
-  }) {
-    if (previous != null) {
-      return previous(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _previous implements MainEvent {
-  factory _previous() = _$_previous;
-}
-
-/// @nodoc
 abstract class _$$_loopModeCopyWith<$Res> {
   factory _$$_loopModeCopyWith(
           _$_loopMode value, $Res Function(_$_loopMode) then) =
       __$$_loopModeCopyWithImpl<$Res>;
-  @useResult
-  $Res call({LoopMode mode});
 }
 
 /// @nodoc
@@ -897,50 +433,26 @@ class __$$_loopModeCopyWithImpl<$Res>
   __$$_loopModeCopyWithImpl(
       _$_loopMode _value, $Res Function(_$_loopMode) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? mode = null,
-  }) {
-    return _then(_$_loopMode(
-      mode: null == mode
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as LoopMode,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_loopMode implements _loopMode {
-  _$_loopMode({required this.mode});
-
-  @override
-  final LoopMode mode;
+  _$_loopMode();
 
   @override
   String toString() {
-    return 'MainEvent.loopMode(mode: $mode)';
+    return 'MainEvent.loopMode()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_loopMode &&
-            (identical(other.mode, mode) || other.mode == mode));
+        (other.runtimeType == runtimeType && other is _$_loopMode);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mode);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_loopModeCopyWith<_$_loopMode> get copyWith =>
-      __$$_loopModeCopyWithImpl<_$_loopMode>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -948,12 +460,9 @@ class _$_loopMode implements _loopMode {
     required TResult Function() init,
     required TResult Function() play,
     required TResult Function() pause,
-    required TResult Function() stop,
-    required TResult Function() next,
-    required TResult Function() previous,
-    required TResult Function(LoopMode mode) loopMode,
+    required TResult Function() loopMode,
   }) {
-    return loopMode(mode);
+    return loopMode();
   }
 
   @override
@@ -962,12 +471,9 @@ class _$_loopMode implements _loopMode {
     TResult? Function()? init,
     TResult? Function()? play,
     TResult? Function()? pause,
-    TResult? Function()? stop,
-    TResult? Function()? next,
-    TResult? Function()? previous,
-    TResult? Function(LoopMode mode)? loopMode,
+    TResult? Function()? loopMode,
   }) {
-    return loopMode?.call(mode);
+    return loopMode?.call();
   }
 
   @override
@@ -976,14 +482,11 @@ class _$_loopMode implements _loopMode {
     TResult Function()? init,
     TResult Function()? play,
     TResult Function()? pause,
-    TResult Function()? stop,
-    TResult Function()? next,
-    TResult Function()? previous,
-    TResult Function(LoopMode mode)? loopMode,
+    TResult Function()? loopMode,
     required TResult orElse(),
   }) {
     if (loopMode != null) {
-      return loopMode(mode);
+      return loopMode();
     }
     return orElse();
   }
@@ -994,9 +497,6 @@ class _$_loopMode implements _loopMode {
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
     required TResult Function(_pause value) pause,
-    required TResult Function(_stop value) stop,
-    required TResult Function(_next value) next,
-    required TResult Function(_previous value) previous,
     required TResult Function(_loopMode value) loopMode,
   }) {
     return loopMode(this);
@@ -1008,9 +508,6 @@ class _$_loopMode implements _loopMode {
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
     TResult? Function(_pause value)? pause,
-    TResult? Function(_stop value)? stop,
-    TResult? Function(_next value)? next,
-    TResult? Function(_previous value)? previous,
     TResult? Function(_loopMode value)? loopMode,
   }) {
     return loopMode?.call(this);
@@ -1022,9 +519,6 @@ class _$_loopMode implements _loopMode {
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
     TResult Function(_pause value)? pause,
-    TResult Function(_stop value)? stop,
-    TResult Function(_next value)? next,
-    TResult Function(_previous value)? previous,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
   }) {
@@ -1036,12 +530,7 @@ class _$_loopMode implements _loopMode {
 }
 
 abstract class _loopMode implements MainEvent {
-  factory _loopMode({required final LoopMode mode}) = _$_loopMode;
-
-  LoopMode get mode;
-  @JsonKey(ignore: true)
-  _$$_loopModeCopyWith<_$_loopMode> get copyWith =>
-      throw _privateConstructorUsedError;
+  factory _loopMode() = _$_loopMode;
 }
 
 /// @nodoc

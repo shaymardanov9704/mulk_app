@@ -4,7 +4,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mulk_app/core/translations/locale_keys.g.dart';
+import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
 import 'package:mulk_app/ui/pages/info_page.dart';
 import 'package:quran/quran.dart' as quran;
 

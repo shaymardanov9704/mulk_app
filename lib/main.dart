@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:mulk_app/core/translations/codegen_loader.g.dart';
+import 'package:mulk_app/ui/core/translations/codegen_loader.g.dart';
 import 'package:mulk_app/ui/pages/main/main_page.dart';
 
 void main() async {
@@ -11,12 +11,12 @@ void main() async {
     EasyLocalization(
       path: 'assets/translations',
       supportedLocales: const [
-        Locale('en'),
         Locale('uz'),
+        Locale('en'),
         Locale('ru'),
         Locale('de')
       ],
-      fallbackLocale: const Locale('en'),
+      fallbackLocale: const Locale('uz'),
       assetLoader: const CodegenLoader(),
       child: const MyApp(),
     ),
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
-      locale: const Locale("Uz"),
+      locale: const Locale("uz"),
       title: 'Mulk',
       theme: ThemeData(
         useMaterial3: true,
