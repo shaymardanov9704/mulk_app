@@ -11,9 +11,7 @@ class DrawerWidget extends StatelessWidget {
         children: [
           ElevatedButton(onPressed: (){}, child: Text("some")),
           ElevatedButton(onPressed: (){}, child: Text("some")),
-          ElevatedButton(onPressed: (){}, child: Text("some")),
-          ElevatedButton(onPressed: (){}, child: Text("some")),
-          ElevatedButton(onPressed: (){}, child: Text("some")),
+
         ],
       ),
     );
