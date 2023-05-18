@@ -4,15 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
 
 class InfoPage extends StatelessWidget {
-  static const String id = 'InfoPage';
-  final bool mode;
 
-  const InfoPage({Key? key, required this.mode}) : super(key: key);
+
+
+  const InfoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mode ? Colors.yellow.shade100 : Colors.white,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.lightGreen.shade800,
         title: Text(

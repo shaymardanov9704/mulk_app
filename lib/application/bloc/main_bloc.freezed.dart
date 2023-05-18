@@ -20,6 +20,7 @@ mixin _$MainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() play,
+    required TResult Function(int index) playAtIndex,
     required TResult Function() pause,
     required TResult Function() loopMode,
   }) =>
@@ -28,6 +29,7 @@ mixin _$MainEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? play,
+    TResult? Function(int index)? playAtIndex,
     TResult? Function()? pause,
     TResult? Function()? loopMode,
   }) =>
@@ -36,6 +38,7 @@ mixin _$MainEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? play,
+    TResult Function(int index)? playAtIndex,
     TResult Function()? pause,
     TResult Function()? loopMode,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$MainEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
+    required TResult Function(_playAtIndex value) playAtIndex,
     required TResult Function(_pause value) pause,
     required TResult Function(_loopMode value) loopMode,
   }) =>
@@ -53,6 +57,7 @@ mixin _$MainEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
+    TResult? Function(_playAtIndex value)? playAtIndex,
     TResult? Function(_pause value)? pause,
     TResult? Function(_loopMode value)? loopMode,
   }) =>
@@ -61,6 +66,7 @@ mixin _$MainEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
+    TResult Function(_playAtIndex value)? playAtIndex,
     TResult Function(_pause value)? pause,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
@@ -122,6 +128,7 @@ class _$_init implements _init {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() play,
+    required TResult Function(int index) playAtIndex,
     required TResult Function() pause,
     required TResult Function() loopMode,
   }) {
@@ -133,6 +140,7 @@ class _$_init implements _init {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? play,
+    TResult? Function(int index)? playAtIndex,
     TResult? Function()? pause,
     TResult? Function()? loopMode,
   }) {
@@ -144,6 +152,7 @@ class _$_init implements _init {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? play,
+    TResult Function(int index)? playAtIndex,
     TResult Function()? pause,
     TResult Function()? loopMode,
     required TResult orElse(),
@@ -159,6 +168,7 @@ class _$_init implements _init {
   TResult map<TResult extends Object?>({
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
+    required TResult Function(_playAtIndex value) playAtIndex,
     required TResult Function(_pause value) pause,
     required TResult Function(_loopMode value) loopMode,
   }) {
@@ -170,6 +180,7 @@ class _$_init implements _init {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
+    TResult? Function(_playAtIndex value)? playAtIndex,
     TResult? Function(_pause value)? pause,
     TResult? Function(_loopMode value)? loopMode,
   }) {
@@ -181,6 +192,7 @@ class _$_init implements _init {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
+    TResult Function(_playAtIndex value)? playAtIndex,
     TResult Function(_pause value)? pause,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
@@ -233,6 +245,7 @@ class _$_play implements _play {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() play,
+    required TResult Function(int index) playAtIndex,
     required TResult Function() pause,
     required TResult Function() loopMode,
   }) {
@@ -244,6 +257,7 @@ class _$_play implements _play {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? play,
+    TResult? Function(int index)? playAtIndex,
     TResult? Function()? pause,
     TResult? Function()? loopMode,
   }) {
@@ -255,6 +269,7 @@ class _$_play implements _play {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? play,
+    TResult Function(int index)? playAtIndex,
     TResult Function()? pause,
     TResult Function()? loopMode,
     required TResult orElse(),
@@ -270,6 +285,7 @@ class _$_play implements _play {
   TResult map<TResult extends Object?>({
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
+    required TResult Function(_playAtIndex value) playAtIndex,
     required TResult Function(_pause value) pause,
     required TResult Function(_loopMode value) loopMode,
   }) {
@@ -281,6 +297,7 @@ class _$_play implements _play {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
+    TResult? Function(_playAtIndex value)? playAtIndex,
     TResult? Function(_pause value)? pause,
     TResult? Function(_loopMode value)? loopMode,
   }) {
@@ -292,6 +309,7 @@ class _$_play implements _play {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
+    TResult Function(_playAtIndex value)? playAtIndex,
     TResult Function(_pause value)? pause,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
@@ -305,6 +323,157 @@ class _$_play implements _play {
 
 abstract class _play implements MainEvent {
   factory _play() = _$_play;
+}
+
+/// @nodoc
+abstract class _$$_playAtIndexCopyWith<$Res> {
+  factory _$$_playAtIndexCopyWith(
+          _$_playAtIndex value, $Res Function(_$_playAtIndex) then) =
+      __$$_playAtIndexCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$_playAtIndexCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$_playAtIndex>
+    implements _$$_playAtIndexCopyWith<$Res> {
+  __$$_playAtIndexCopyWithImpl(
+      _$_playAtIndex _value, $Res Function(_$_playAtIndex) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$_playAtIndex(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_playAtIndex implements _playAtIndex {
+  _$_playAtIndex({required this.index});
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'MainEvent.playAtIndex(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_playAtIndex &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_playAtIndexCopyWith<_$_playAtIndex> get copyWith =>
+      __$$_playAtIndexCopyWithImpl<_$_playAtIndex>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() play,
+    required TResult Function(int index) playAtIndex,
+    required TResult Function() pause,
+    required TResult Function() loopMode,
+  }) {
+    return playAtIndex(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? play,
+    TResult? Function(int index)? playAtIndex,
+    TResult? Function()? pause,
+    TResult? Function()? loopMode,
+  }) {
+    return playAtIndex?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? play,
+    TResult Function(int index)? playAtIndex,
+    TResult Function()? pause,
+    TResult Function()? loopMode,
+    required TResult orElse(),
+  }) {
+    if (playAtIndex != null) {
+      return playAtIndex(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_init value) init,
+    required TResult Function(_play value) play,
+    required TResult Function(_playAtIndex value) playAtIndex,
+    required TResult Function(_pause value) pause,
+    required TResult Function(_loopMode value) loopMode,
+  }) {
+    return playAtIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_init value)? init,
+    TResult? Function(_play value)? play,
+    TResult? Function(_playAtIndex value)? playAtIndex,
+    TResult? Function(_pause value)? pause,
+    TResult? Function(_loopMode value)? loopMode,
+  }) {
+    return playAtIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_init value)? init,
+    TResult Function(_play value)? play,
+    TResult Function(_playAtIndex value)? playAtIndex,
+    TResult Function(_pause value)? pause,
+    TResult Function(_loopMode value)? loopMode,
+    required TResult orElse(),
+  }) {
+    if (playAtIndex != null) {
+      return playAtIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _playAtIndex implements MainEvent {
+  factory _playAtIndex({required final int index}) = _$_playAtIndex;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$_playAtIndexCopyWith<_$_playAtIndex> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -345,6 +514,7 @@ class _$_pause implements _pause {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() play,
+    required TResult Function(int index) playAtIndex,
     required TResult Function() pause,
     required TResult Function() loopMode,
   }) {
@@ -356,6 +526,7 @@ class _$_pause implements _pause {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? play,
+    TResult? Function(int index)? playAtIndex,
     TResult? Function()? pause,
     TResult? Function()? loopMode,
   }) {
@@ -367,6 +538,7 @@ class _$_pause implements _pause {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? play,
+    TResult Function(int index)? playAtIndex,
     TResult Function()? pause,
     TResult Function()? loopMode,
     required TResult orElse(),
@@ -382,6 +554,7 @@ class _$_pause implements _pause {
   TResult map<TResult extends Object?>({
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
+    required TResult Function(_playAtIndex value) playAtIndex,
     required TResult Function(_pause value) pause,
     required TResult Function(_loopMode value) loopMode,
   }) {
@@ -393,6 +566,7 @@ class _$_pause implements _pause {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
+    TResult? Function(_playAtIndex value)? playAtIndex,
     TResult? Function(_pause value)? pause,
     TResult? Function(_loopMode value)? loopMode,
   }) {
@@ -404,6 +578,7 @@ class _$_pause implements _pause {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
+    TResult Function(_playAtIndex value)? playAtIndex,
     TResult Function(_pause value)? pause,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),
@@ -459,6 +634,7 @@ class _$_loopMode implements _loopMode {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() play,
+    required TResult Function(int index) playAtIndex,
     required TResult Function() pause,
     required TResult Function() loopMode,
   }) {
@@ -470,6 +646,7 @@ class _$_loopMode implements _loopMode {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? play,
+    TResult? Function(int index)? playAtIndex,
     TResult? Function()? pause,
     TResult? Function()? loopMode,
   }) {
@@ -481,6 +658,7 @@ class _$_loopMode implements _loopMode {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? play,
+    TResult Function(int index)? playAtIndex,
     TResult Function()? pause,
     TResult Function()? loopMode,
     required TResult orElse(),
@@ -496,6 +674,7 @@ class _$_loopMode implements _loopMode {
   TResult map<TResult extends Object?>({
     required TResult Function(_init value) init,
     required TResult Function(_play value) play,
+    required TResult Function(_playAtIndex value) playAtIndex,
     required TResult Function(_pause value) pause,
     required TResult Function(_loopMode value) loopMode,
   }) {
@@ -507,6 +686,7 @@ class _$_loopMode implements _loopMode {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_init value)? init,
     TResult? Function(_play value)? play,
+    TResult? Function(_playAtIndex value)? playAtIndex,
     TResult? Function(_pause value)? pause,
     TResult? Function(_loopMode value)? loopMode,
   }) {
@@ -518,6 +698,7 @@ class _$_loopMode implements _loopMode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_init value)? init,
     TResult Function(_play value)? play,
+    TResult Function(_playAtIndex value)? playAtIndex,
     TResult Function(_pause value)? pause,
     TResult Function(_loopMode value)? loopMode,
     required TResult orElse(),

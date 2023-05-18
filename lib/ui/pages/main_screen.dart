@@ -614,7 +614,7 @@ class _MainScreenState extends State<MainScreen> {
               onTap: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (BuildContext context) {
-                  return InfoPage(mode: mode);
+                  return InfoPage();
                 }));
               },
               child: Container(
@@ -636,7 +636,7 @@ class _MainScreenState extends State<MainScreen> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) {
-                            return InfoPage(mode: mode);
+                            return InfoPage();
                           }));
                         },
                         icon: const Icon(CupertinoIcons.square_arrow_right,

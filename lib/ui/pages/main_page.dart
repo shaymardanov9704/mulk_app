@@ -7,6 +7,7 @@ import 'package:mulk_app/application/bloc/main_bloc.dart';
 import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
 import 'package:mulk_app/ui/pages/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
+import 'package:mulk_app/ui/widgets/draver_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -33,7 +34,10 @@ class _MainPageState extends State<MainPage> {
         listener: (context, state) {},
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(title: Text("Some"),),
+            appBar: AppBar(
+              title: const Text("Al Mulk"),
+            ),
+            drawer: const DrawerWidget(),
             body: IndexedStack(
               index: _index,
               children: [
@@ -42,7 +46,11 @@ class _MainPageState extends State<MainPage> {
                   itemBuilder: (_, i) {
                     return AyahWidget(
                       number: i,
-                      onTap: () => bloc.add(MainEvent.play()),
+                      onPlay: () {
+                        state.playerStatus == PlayerStatus.play
+                            ? bloc.add(MainEvent.pause())
+                            : bloc.add(MainEvent.playAtIndex(index: i));
+                      },
                       audioPlayer: bloc.audioPlayer,
                     );
                   },
