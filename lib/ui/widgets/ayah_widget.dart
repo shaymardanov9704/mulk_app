@@ -15,7 +15,6 @@ class AyahWidget extends StatefulWidget {
     Key? key,
     required this.number,
     required this.onPlay,
-
     required this.audioPlayer,
   }) : super(key: key);
 
@@ -33,7 +32,9 @@ class _AyahWidgetState extends State<AyahWidget> {
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           margin: const EdgeInsets.only(bottom: 5),
           decoration: BoxDecoration(
-            color: snapshot.data == widget.number && widget.audioPlayer.playing ? Colors.lightGreen.withOpacity(0.4) : Colors.white,
+            color: snapshot.data == widget.number && widget.audioPlayer.playing
+                ? Colors.lightGreen.withOpacity(0.4)
+                : Colors.white,
           ),
           child: Column(
             children: [
@@ -64,6 +65,7 @@ class _AyahWidgetState extends State<AyahWidget> {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
               Text(
                 widget.number == 0
                     ? LocaleKeys.basmala.tr()
