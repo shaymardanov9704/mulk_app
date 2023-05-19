@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
+import 'package:mulk_app/ui/widgets/tafser.dart';
 import 'package:quran/quran.dart' as quran;
 
 class AyahWidget extends StatefulWidget {
@@ -29,26 +30,18 @@ class _AyahWidgetState extends State<AyahWidget> {
       stream: widget.audioPlayer.currentIndexStream,
       builder: (context, snapshot) {
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: const EdgeInsets.only(top: 10, right: 10, left: 5),
           margin: const EdgeInsets.only(bottom: 5),
           decoration: BoxDecoration(
-            color: snapshot.data == widget.number && widget.audioPlayer.playing
-                ? Colors.lightGreen.withOpacity(0.4)
-                : Colors.white,
-          ),
+              color: snapshot.data == widget.number
+                  ? Colors.lightGreen.withOpacity(0.2)
+                  : widget.audioPlayer.playing && snapshot.data == widget.number
+                      ? Colors.lightGreen.withOpacity(0.4)
+                      : Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(width: 0.5, color: Colors.lightGreen)),
           child: Column(
             children: [
-              IconButton(
-                onPressed: () {
-                  widget.onPlay.call();
-                  setState(() {});
-                },
-                icon: Icon(
-                  snapshot.data == widget.number && widget.audioPlayer.playing
-                      ? CupertinoIcons.pause
-                      : CupertinoIcons.play,
-                ),
-              ),
               Center(
                 child: Text(
                   widget.number == 0
@@ -77,9 +70,53 @@ class _AyahWidgetState extends State<AyahWidget> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              snapshot.data == widget.number
-                  ? const SizedBox()
-                  : const Divider(color: Colors.lightGreen),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (_) => Tafser(number: widget.number),
+                        ),
+                      );
+                    },
+                    child: const Text("Tafser"),
+                  ),
+                  const Expanded(child: SizedBox()),
+                  IconButton(
+                    onPressed: () {
+                      widget.onPlay.call();
+                      setState(() {});
+                    },
+                    padding: EdgeInsets.zero,
+                    icon: Icon(
+                      snapshot.data == widget.number &&
+                              widget.audioPlayer.playing
+                          ? CupertinoIcons.pause
+                          : CupertinoIcons.play,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      widget.onPlay.call();
+                      setState(() {});
+                    },
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(Icons.share),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      widget.onPlay.call();
+                      setState(() {});
+                    },
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(CupertinoIcons.repeat_1),
+                  ),
+                ],
+              )
             ],
           ),
         );

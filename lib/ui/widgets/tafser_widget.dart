@@ -55,12 +55,6 @@ class TafseerWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            width: 380,
-            height: 1,
-            color: Colors.green.shade900,
-          )
         ],
       ),
     );

@@ -529,7 +529,7 @@ class _MainScreenState extends State<MainScreen> {
                         context.setLocale(const Locale('uz'));
                         setState(() {});
                       },
-                      child: const Text('        O`zbek       ')),
+                        child: const Text('        O`zbek       ')),
                   OutlinedButton(
                       onPressed: () {
                         context.setLocale(const Locale('de'));

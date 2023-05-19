@@ -29,8 +29,8 @@ dependencies:
   path_provider: ^2.0.14
   provider: ^6.0.5
   just_audio: ^0.9.33
-  #audioplayers: ^4.0.1
-
+  alice:
+  get_it:
 dev_dependencies:
   flutter_test:
     sdk: flutter
