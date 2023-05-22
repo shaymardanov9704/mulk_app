@@ -912,7 +912,7 @@ class _MainScreenState extends State<MainScreen> {
                             tafseerWidget(1, LocaleKeys.ayah1.tr(),
                                 LocaleKeys.tafser1.tr()),
                             tafseerWidget(2, LocaleKeys.ayah2.tr(),
-                                LocaleKeys.tafsir2.tr()),
+                                LocaleKeys.tafser2.tr()),
                             tafseerWidget(3, LocaleKeys.ayah3.tr(),
                                 LocaleKeys.tafser3.tr()),
                             tafseerWidget(

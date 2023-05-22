@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:mulk_app/application/provider/theme_provider.dart';
 import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
+import 'package:mulk_app/ui/core/utils/app_text_styles.dart';
 import 'package:mulk_app/ui/widgets/tafser.dart';
+import 'package:provider/provider.dart';
 import 'package:quran/quran.dart' as quran;
 
 class AyahWidget extends StatefulWidget {
@@ -37,7 +39,9 @@ class _AyahWidgetState extends State<AyahWidget> {
                   ? Colors.lightGreen.withOpacity(0.2)
                   : widget.audioPlayer.playing && snapshot.data == widget.number
                       ? Colors.lightGreen.withOpacity(0.4)
-                      : Colors.white,
+                      : Provider.of<ThemeProvider>(context).isDark
+                          ? Colors.black
+                          : Colors.white,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(width: 0.5, color: Colors.lightGreen)),
           child: Column(
@@ -49,13 +53,7 @@ class _AyahWidgetState extends State<AyahWidget> {
                       : quran.getVerse(67, widget.number),
                   textAlign: TextAlign.right,
                   maxLines: 5,
-                  style: const TextStyle(
-                    fontSize: 27,
-                    fontFamily: 'Scheherazade',
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.normal,
-                    color: Colors.black,
-                  ),
+                  style: AppTextStyles.arabic,
                 ),
               ),
               const SizedBox(height: 10),
@@ -64,11 +62,7 @@ class _AyahWidgetState extends State<AyahWidget> {
                     ? LocaleKeys.basmala.tr()
                     : '  (67:${widget.number}) ${"ayah${widget.number}".tr()}',
                 maxLines: 7,
-                style: GoogleFonts.roboto(
-                  color: Colors.green.shade900,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppTextStyles.style600,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -100,18 +94,12 @@ class _AyahWidgetState extends State<AyahWidget> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {
-                      widget.onPlay.call();
-                      setState(() {});
-                    },
+                    onPressed: () {},
                     padding: EdgeInsets.zero,
                     icon: const Icon(Icons.share),
                   ),
                   IconButton(
-                    onPressed: () {
-                      widget.onPlay.call();
-                      setState(() {});
-                    },
+                    onPressed: () {},
                     padding: EdgeInsets.zero,
                     icon: const Icon(CupertinoIcons.repeat_1),
                   ),

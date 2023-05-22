@@ -2,15 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/src/painting/text_style.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mulk_app/ui/core/utils/app_colors.dart';
 
 class AppTextStyles {
   AppTextStyles._();
 
-  static final TextStyle _style = GoogleFonts.poppins().copyWith(
-    fontSize: 14,
-    color: AppColors.black,
-  );
+  static final TextStyle _style = GoogleFonts.roboto().copyWith(fontSize: 14);
 
   static TextStyle arabic = const TextStyle(
     fontSize: 25,

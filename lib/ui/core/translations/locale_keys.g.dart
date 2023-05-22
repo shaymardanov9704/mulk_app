@@ -39,7 +39,7 @@ abstract class  LocaleKeys {
   static const lmode = 'lmode';
   static const dmode = 'dmode';
   static const tafser1 = 'tafser1';
-  static const tafsir2 = 'tafsir2';
+  static const tafser2 = 'tafser2';
   static const tafser3 = 'tafser3';
   static const tafser4 = 'tafser4';
   static const tafser5 = 'tafser5';

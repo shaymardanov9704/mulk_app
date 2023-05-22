@@ -18,7 +18,7 @@ class Tafser extends StatelessWidget {
       appBar: AppBar(
         title: Text("Mulk (67:$number) tafser"),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [

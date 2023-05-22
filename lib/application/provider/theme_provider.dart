@@ -1,3 +1,17 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+class ThemeProvider extends ChangeNotifier {
+  ThemeMode themeMode = ThemeMode.dark;
+
+  bool get isDark => themeMode == ThemeMode.dark;
+
+  void toggleTheme(bool isOn) {
+    themeMode = isOn ? ThemeMode.dark : ThemeMode.light;
+    notifyListeners();
+  }
+}
+
 // import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 // import 'package:mulk_app/core/hive/cache_hive.dart';

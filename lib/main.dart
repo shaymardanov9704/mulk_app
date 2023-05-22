@@ -1,12 +1,21 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:mulk_app/application/provider/theme_provider.dart';
+import 'package:mulk_app/ui/core/themes/app_themes.dart';
 import 'package:mulk_app/ui/core/translations/codegen_loader.g.dart';
 import 'package:mulk_app/ui/pages/main_page.dart';
+import 'package:provider/provider.dart';
+
+final globalKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(
     EasyLocalization(
       path: 'assets/translations',
@@ -28,16 +37,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: const Locale("uz"),
-      title: 'Al Mulk',
-      theme: ThemeData(
-        useMaterial3: true,
-        primarySwatch: Colors.green,
-      ),
-      home: const MainPage(),
+    return ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      builder: (context, _) {
+        final theme = Provider.of<ThemeProvider>(context);
+        return MaterialApp(
+          navigatorKey: globalKey,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: const Locale("uz"),
+          title: 'Al Mulk',
+          themeMode: theme.themeMode,
+          theme: AppThemes.light(),
+          darkTheme: AppThemes.dark(),
+          home: const MainPage(),
+        );
+      },
     );
   }
 }

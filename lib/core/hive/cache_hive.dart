@@ -18,5 +18,4 @@ class CacheHive {
     final index = ThemeMode.values.toList().indexWhere((e) => e.name == mode);
     return ThemeMode.values[index];
   }
-
 }
