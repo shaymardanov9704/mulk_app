@@ -10,7 +10,6 @@ import 'package:mulk_app/ui/core/utils/app_colors.dart';
 import 'package:mulk_app/ui/pages/settings_page.dart';
 import 'package:mulk_app/ui/pages/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
-import 'package:mulk_app/ui/widgets/btn.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
@@ -54,7 +53,7 @@ class _MainPageState extends State<MainPage> {
                   actions: [
                     IconButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
+                        Navigator.push(
                           context,
                           CupertinoPageRoute(
                             builder: (_) => const SettingsPage(),

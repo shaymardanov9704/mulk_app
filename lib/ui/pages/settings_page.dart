@@ -13,6 +13,9 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Setting"),
+      ),
       body: ListView(
         children: [
           const Btn(),

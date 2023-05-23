@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mulk_app/ui/core/utils/app_text_styles.dart';
 import 'package:mulk_app/ui/pages/main_page.dart';
 
