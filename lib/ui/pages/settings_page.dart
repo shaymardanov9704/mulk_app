@@ -1,16 +1,21 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:mulk_app/ui/widgets/btn.dart';
 
-class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+class SettingsPage extends StatefulWidget {
+  const SettingsPage({Key? key}) : super(key: key);
 
   @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      body: ListView(
         children: [
-          ElevatedButton(onPressed: () {}, child: const Text("Change Theme")),
+          const Btn(),
           ElevatedButton(
             onPressed: () {
               context.setLocale(const Locale('en'));
