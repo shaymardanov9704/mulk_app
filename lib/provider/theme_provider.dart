@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mulk_app/core/hive/cache_hive.dart';
 
@@ -13,6 +12,7 @@ class ThemeProvider extends ChangeNotifier {
 
   void toggleTheme(bool isOn) async {
     themeMode = isOn ? ThemeMode.dark : ThemeMode.light;
+    await _hive.saveThemeMode(isOn ? ThemeMode.dark : ThemeMode.light);
     notifyListeners();
   }
 }

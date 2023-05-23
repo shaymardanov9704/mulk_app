@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
-import 'package:mulk_app/ui/pages/main_page.dart';
+import 'package:mulk_app/ui/pages/main/main_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

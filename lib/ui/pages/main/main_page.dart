@@ -3,12 +3,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mulk_app/application/bloc/main_bloc.dart';
-import 'package:mulk_app/application/provider/theme_provider.dart';
+import 'package:mulk_app/provider/theme_provider.dart';
+import 'package:mulk_app/ui/pages/main/bloc/main_bloc.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/core/translations/locale_keys.g.dart';
-import 'package:mulk_app/ui/pages/settings_page.dart';
-import 'package:mulk_app/ui/pages/tafseer_page.dart';
+import 'package:mulk_app/ui/pages/settings/settings_page.dart';
+import 'package:mulk_app/ui/pages/main/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -46,7 +46,6 @@ class _MainPageState extends State<MainPage> {
             child: SafeArea(
               child: Scaffold(
                 appBar: AppBar(
-
                   title: const Text("Al Mulk"),
                   actions: [
                     IconButton(
