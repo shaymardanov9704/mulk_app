@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
-import 'package:mulk_app/ui/core/utils/app_colors.dart';
-import 'package:mulk_app/ui/core/utils/app_text_styles.dart';
+import 'package:mulk_app/core/translations/locale_keys.g.dart';
+import 'package:mulk_app/core/app_colors.dart';
+import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:quran/quran.dart' as quran;
 
 class TafseerWidget extends StatelessWidget {

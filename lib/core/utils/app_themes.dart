@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mulk_app/ui/core/utils/app_colors.dart';
+import 'package:mulk_app/core/app_colors.dart';
 
 class AppThemes {
   const AppThemes._();

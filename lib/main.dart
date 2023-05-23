@@ -2,10 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:mulk_app/application/provider/theme_provider.dart';
 import 'package:mulk_app/di.dart';
-import 'package:mulk_app/ui/core/themes/app_themes.dart';
-import 'package:mulk_app/ui/core/translations/codegen_loader.g.dart';
+import 'package:mulk_app/core/utils/app_themes.dart';
 import 'package:mulk_app/ui/pages/main_page.dart';
 import 'package:provider/provider.dart';
+import 'core/translations/codegen_loader.g.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
