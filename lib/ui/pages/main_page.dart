@@ -4,11 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/application/bloc/main_bloc.dart';
+import 'package:mulk_app/application/provider/theme_provider.dart';
 import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
+import 'package:mulk_app/ui/core/utils/app_colors.dart';
 import 'package:mulk_app/ui/pages/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
 import 'package:mulk_app/ui/widgets/btn.dart';
 import 'package:mulk_app/ui/widgets/draver_widget.dart';
+import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -19,6 +22,7 @@ class MainPage extends StatefulWidget {
 
 //assalamu aleykum السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
 //بسم الله الرحمن الرحيم  basmala
+
 class _MainPageState extends State<MainPage> {
   final bloc = MainBloc()..add(MainEvent.init());
   int _index = 0;
@@ -37,10 +41,15 @@ class _MainPageState extends State<MainPage> {
         listener: (context, state) {},
         builder: (context, state) {
           return Container(
-            color: Colors.black,
+            color: Provider.of<ThemeProvider>(context).isDark
+                ? Colors.black
+                : Colors.white,
             child: SafeArea(
               child: Scaffold(
                 appBar: AppBar(
+                  backgroundColor: Provider.of<ThemeProvider>(context).isDark
+                      ? Colors.black
+                      : Colors.white,
                   title: const Text("Al Mulk"),
                   actions: [
                     const Btn(),
@@ -87,7 +96,9 @@ class _MainPageState extends State<MainPage> {
                 bottomNavigationBar: BottomNavyBar(
                   selectedIndex: _index,
                   showElevation: true,
-                  backgroundColor: Colors.lightGreen.shade800,
+                  backgroundColor: Provider.of<ThemeProvider>(context).isDark
+                      ? AppColors.black.withOpacity(0.8)
+                      : Colors.lightGreen.shade800,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   items: [
                     BottomNavyBarItem(

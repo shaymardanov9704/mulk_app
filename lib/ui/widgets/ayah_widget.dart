@@ -33,17 +33,18 @@ class _AyahWidgetState extends State<AyahWidget> {
       builder: (context, snapshot) {
         return Container(
           padding: const EdgeInsets.only(top: 10, right: 10, left: 5),
-          margin: const EdgeInsets.only(bottom: 5),
+          margin: const EdgeInsets.only(bottom: 10),
           decoration: BoxDecoration(
-              color: snapshot.data == widget.number
-                  ? Colors.lightGreen.withOpacity(0.2)
-                  : widget.audioPlayer.playing && snapshot.data == widget.number
-                      ? Colors.lightGreen.withOpacity(0.4)
-                      : Provider.of<ThemeProvider>(context).isDark
-                          ? Colors.black
-                          : Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(width: 0.5, color: Colors.lightGreen)),
+            color: snapshot.data == widget.number
+                ? Colors.lightGreen.withOpacity(0.2)
+                : widget.audioPlayer.playing && snapshot.data == widget.number
+                    ? Colors.lightGreen.withOpacity(0.4)
+                    : Provider.of<ThemeProvider>(context).isDark
+                        ? Colors.black
+                        : Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(width: 0.5, color: Colors.lightGreen),
+          ),
           child: Column(
             children: [
               Center(

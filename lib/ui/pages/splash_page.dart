@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mulk_app/ui/pages/main_screen.dart';
+import 'package:mulk_app/ui/pages/main_page.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = 'splash';
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   afterSplash() async {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MainScreen()));
+          context, MaterialPageRoute(builder: (context) => MainPage()));
     });
   }
 

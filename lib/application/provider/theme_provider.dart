@@ -1,12 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mulk_app/core/hive/cache_hive.dart';
 
 class ThemeProvider extends ChangeNotifier {
+  final CacheHive _hive;
+
+  ThemeProvider(this._hive);
+
   ThemeMode themeMode = ThemeMode.dark;
 
   bool get isDark => themeMode == ThemeMode.dark;
 
-  void toggleTheme(bool isOn) {
+  void toggleTheme(bool isOn) async {
     themeMode = isOn ? ThemeMode.dark : ThemeMode.light;
     notifyListeners();
   }

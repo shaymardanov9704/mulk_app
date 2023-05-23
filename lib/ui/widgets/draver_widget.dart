@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:mulk_app/application/provider/theme_provider.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -11,11 +10,7 @@ class DrawerWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(
-              onPressed: () {
-                // ThemeProvider.instance.change();
-              },
-              child: const Text("Change Theme")),
+          ElevatedButton(onPressed: () {}, child: const Text("Change Theme")),
           ElevatedButton(
             onPressed: () {
               context.setLocale(const Locale('en'));

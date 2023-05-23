@@ -16,7 +16,6 @@ dependencies:
   google_fonts: ^4.0.4
   quran: ^1.0.6
   bottom_navy_bar: ^6.0.0
-  assets_audio_player: ^3.0.3
   easy_localization: ^3.0.0
   device_preview: ^1.1.0
   flutter_bloc: ^8.1.2
@@ -29,8 +28,8 @@ dependencies:
   path_provider: ^2.0.14
   provider: ^6.0.5
   just_audio: ^0.9.33
-  alice:
   get_it:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
