@@ -12,12 +12,14 @@ import 'package:quran/quran.dart' as quran;
 class AyahWidget extends StatefulWidget {
   final int number;
   final VoidCallback onPlay;
+  final VoidCallback onLoop;
   final AudioPlayer audioPlayer;
 
   const AyahWidget({
     Key? key,
     required this.number,
     required this.onPlay,
+    required this.onLoop,
     required this.audioPlayer,
   }) : super(key: key);
 
@@ -100,9 +102,23 @@ class _AyahWidgetState extends State<AyahWidget> {
                     icon: const Icon(Icons.share),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      snapshot.data == widget.number
+                          ? widget.onLoop.call()
+                          : setState(() {});
+                      setState(() {});
+                    },
                     padding: EdgeInsets.zero,
-                    icon: const Icon(CupertinoIcons.repeat_1),
+                    icon: Icon(
+                      snapshot.data == widget.number &&
+                              widget.audioPlayer.loopMode == LoopMode.one
+                          ? CupertinoIcons.repeat_1
+                          : CupertinoIcons.repeat,
+                      color: snapshot.data == widget.number &&
+                              widget.audioPlayer.loopMode == LoopMode.one
+                          ? Colors.red
+                          : Colors.white,
+                    ),
                   ),
                 ],
               )

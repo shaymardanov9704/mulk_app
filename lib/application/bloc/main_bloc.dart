@@ -109,6 +109,9 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     _loopMode event,
     Emitter<MainState> emit,
   ) async {
-    emit(state.copyWith(playerStatus: PlayerStatus.loopMode));
+    audioPlayer.loopMode == LoopMode.one
+        ? audioPlayer.setLoopMode(LoopMode.all)
+        : audioPlayer.setLoopMode(LoopMode.one);
+    emit(state.copyWith(status: EnumStatus.success));
   }
 }
