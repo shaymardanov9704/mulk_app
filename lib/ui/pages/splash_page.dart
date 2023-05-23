@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mulk_app/ui/core/utils/app_text_styles.dart';
 import 'package:mulk_app/ui/pages/main_page.dart';
 
 class SplashScreen extends StatefulWidget {
-  static const String id = 'splash';
-
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -14,10 +13,15 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   afterSplash() async {
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MainPage()));
-    });
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const MainPage()),
+        );
+      },
+    );
   }
 
   @override
@@ -40,11 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Text(
             'Al-Mulk',
-            style: GoogleFonts.rubik(
-              color: Colors.black,
-              fontSize: 35,
-              fontWeight: FontWeight.w500,
-            ),
+            style: AppTextStyles.style700.copyWith(fontSize: 24),
           ),
           const SizedBox(height: 240),
         ],

@@ -4,9 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mulk_app/ui/core/translations/locale_keys.g.dart';
 
 class InfoPage extends StatelessWidget {
-
-
-
   const InfoPage({Key? key}) : super(key: key);
 
   @override
