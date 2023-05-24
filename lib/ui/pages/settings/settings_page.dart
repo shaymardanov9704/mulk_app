@@ -1,6 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mulk_app/core/common/words.dart';
+import 'package:mulk_app/core/utils/app_text_styles.dart';
+import 'package:mulk_app/ui/dialogs/language_dialog.dart';
 import 'package:mulk_app/ui/widgets/btn.dart';
 import 'bloc/settings_bloc.dart';
 
@@ -33,30 +36,21 @@ class _SettingsPageState extends State<SettingsPage> {
             body: ListView(
               padding: const EdgeInsets.all(10),
               children: [
-                const Btn(),
-                ElevatedButton(
-                  onPressed: () {
-                    context.setLocale(const Locale('en'));
-                  },
-                  child: const Text("English"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      Words.darkMode.tr(),
+                      style: AppTextStyles.style600.copyWith(fontSize: 16),
+                    ),
+                    const Btn(),
+                  ],
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    context.setLocale(const Locale('uz'));
+                  onPressed: () async {
+                    LanguageDialog(context: context).show();
                   },
-                  child: const Text("O`zbek"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    context.setLocale(const Locale('de'));
-                  },
-                  child: const Text("Ўзбек"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    context.setLocale(const Locale('ru'));
-                  },
-                  child: const Text("Русский"),
+                  child: const Text("Language"),
                 ),
               ],
             ),

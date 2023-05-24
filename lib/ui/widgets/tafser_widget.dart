@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/translations/locale_keys.g.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
@@ -33,15 +34,15 @@ class TafseerWidget extends StatelessWidget {
           Text(
             number == 0
                 ? LocaleKeys.basmala.tr()
-                : '(67:$number) ${"ayah$number".tr()}',
+                : '(67:$number) ${Words.ayah.tr(number)}',
             style: AppTextStyles.style600.copyWith(
-              fontSize: 16,
-              color: AppColors.grey,
+              fontSize: 17,
+              color: AppColors.primary,
             ),
           ),
           const SizedBox(height: 5),
           Text(
-            number == 0 ? LocaleKeys.first_t.tr() : "tafser$number".tr(),
+            number == 0 ? LocaleKeys.first_t.tr() : Words.tafser.tr(number),
             style: AppTextStyles.style600.copyWith(fontSize: 16),
           ),
         ],

@@ -4,12 +4,11 @@ extension MyList on List {
     text = text.substring(1, text.length - 1);
 
     return """
-// ignore: implementation_imports
 import 'package:easy_localization/src/public_ext.dart';
 
 extension MyWords on Words {
   String tr([dynamic key]) {
-   return "\$name\${key == null ? "" : "\$key"}".tr();
+    return "\$name\${key == null ? "" : "\\\$\$key"}".tr();
   }
 }
 

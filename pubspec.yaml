@@ -45,7 +45,7 @@ flutter:
   assets:
     - assets/audios/
     - assets/images/
-    - assets/translations/
+    - assets/tr/
 
   fonts:
     - family: Scheherazade
