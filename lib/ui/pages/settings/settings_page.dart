@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/core/common/words.dart';
+import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
+import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/dialogs/language_dialog.dart';
 import 'package:mulk_app/ui/widgets/btn.dart';
+import 'package:provider/provider.dart';
 import 'bloc/settings_bloc.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -50,7 +53,30 @@ class _SettingsPageState extends State<SettingsPage> {
                   onPressed: () async {
                     LanguageDialog(context: context).show();
                   },
-                  child: const Text("Language"),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)
+                    )
+                  ),
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Provider.of<ThemeProvider>(context).isDark
+                          ? AppColors.darkBackground
+                          : AppColors.lightBackground,
+                    ),
+                    child: Center(
+                      child: Text(
+                        Words.changeLanguage.tr(),
+                        style: AppTextStyles.style500.copyWith(
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

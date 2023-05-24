@@ -88,8 +88,11 @@ class _Item extends StatelessWidget {
           horizontal: 9,
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-        ),
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              width: 0.5,
+              color: AppColors.primary,
+            )),
         child: Center(
           child: Text(
             title,
