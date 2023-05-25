@@ -5,11 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
+import 'package:mulk_app/ui/app_icons.dart';
 import 'package:mulk_app/ui/pages/main/bloc/main_bloc.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/ui/pages/settings/settings_page.dart';
 import 'package:mulk_app/ui/pages/main/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
+import 'package:mulk_app/ui/widgets/bottom_navigaion_bar.dart';
 import 'package:mulk_app/ui/widgets/drawer_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +28,12 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final bloc = MainBloc()..add(MainEvent.init());
   int _index = 0;
+
+  List<String> titles = [
+    Words.main.tr(),
+    Words.tafserTitle.tr(),
+    Words.settings.tr(),
+  ];
 
   @override
   void dispose() {
@@ -46,35 +54,9 @@ class _MainPageState extends State<MainPage> {
                 ? AppColors.darkBackground
                 : AppColors.lightBackground,
             child: SafeArea(
+              bottom: false,
               child: Scaffold(
-                appBar: AppBar(
-                  title: const Text("Al Mulk"),
-                  actions: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (_) => const SettingsPage(),
-                          ),
-                        );
-                      },
-                      icon: const Icon(CupertinoIcons.settings),
-                    ),
-                  ],
-                  // leading: Builder(
-                  //   builder: (context) {
-                  //     return IconButton(
-                  //       onPressed: () {
-                  //         Scaffold.of(context).openDrawer();
-                  //       },
-                  //       tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-                  //       icon: const Icon(CupertinoIcons.tornado),
-                  //     );
-                  //   }
-                  // ),
-                ),
-                // drawer: const DrawerWidget(),
+                appBar: AppBar(title: Text(titles[_index])),
                 body: IndexedStack(
                   index: _index,
                   children: [
@@ -97,6 +79,7 @@ class _MainPageState extends State<MainPage> {
                       },
                     ),
                     const TafseerPage(),
+                    const SettingsPage(),
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
@@ -111,7 +94,7 @@ class _MainPageState extends State<MainPage> {
                         : CupertinoIcons.play,
                   ),
                 ),
-                bottomNavigationBar: BottomNavyBar(
+                bottomNavigationBar: AppBottomNavBar(
                   selectedIndex: _index,
                   showElevation: false,
                   backgroundColor: Provider.of<ThemeProvider>(context).isDark
@@ -119,8 +102,8 @@ class _MainPageState extends State<MainPage> {
                       : AppColors.lightBackground,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   items: [
-                    BottomNavyBarItem(
-                      icon: const Icon(CupertinoIcons.square_favorites),
+                    AppBottomNavBarItem(
+                      icon: AppIcons.mosque.copyWith(color: AppColors.white),
                       title: Text(
                         Words.main.tr(),
                         style: AppTextStyles.style600.copyWith(fontSize: 16),
@@ -129,10 +112,21 @@ class _MainPageState extends State<MainPage> {
                           ? AppColors.white
                           : AppColors.black,
                     ),
-                    BottomNavyBarItem(
-                      icon: const Icon(CupertinoIcons.book),
+                    AppBottomNavBarItem(
+                      icon: AppIcons.openBook
+                          .copyWith(color: AppColors.white, width: 30),
                       title: Text(
                         Words.tafserTitle.tr(),
+                        style: AppTextStyles.style600.copyWith(fontSize: 16),
+                      ),
+                      activeColor: Provider.of<ThemeProvider>(context).isDark
+                          ? AppColors.white
+                          : AppColors.black,
+                    ),
+                    AppBottomNavBarItem(
+                      icon: AppIcons.settings.copyWith(color: AppColors.white),
+                      title: Text(
+                        Words.settings.tr(),
                         style: AppTextStyles.style600.copyWith(fontSize: 16),
                       ),
                       activeColor: Provider.of<ThemeProvider>(context).isDark
