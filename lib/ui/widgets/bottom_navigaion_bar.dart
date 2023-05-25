@@ -50,7 +50,7 @@ class AppBottomNavBar extends StatelessWidget {
       child: SafeArea(
         child: Container(
           width: double.infinity,
-          height: 95,
+          height: 85,
           padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
           child: Row(
             mainAxisAlignment: mainAxisAlignment,
@@ -102,45 +102,32 @@ class _ItemWidget extends StatelessWidget {
       container: true,
       selected: isSelected,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AnimatedContainer(
-            width: isSelected ? 60 : 50,
-            height: isSelected ? 60 : 50,
+            width: isSelected ? 50 : 40,
+            height: isSelected ? 50 : 40,
             duration: animationDuration,
             curve: curve,
             decoration: BoxDecoration(
-              color:
-                  isSelected ? item.activeColor.withOpacity(0.2) : backgroundColor,
+              color: isSelected
+                  ? item.activeColor.withOpacity(0.2)
+                  : backgroundColor,
               borderRadius: BorderRadius.circular(50),
             ),
             child: Center(
-              child: Container(
-                width: isSelected ? 60 : 50,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: IconTheme(
-                  data: IconThemeData(
-                    size: iconSize,
-                    color: isSelected
-                        ? item.activeColor.withOpacity(1)
-                        : item.inactiveColor ?? item.activeColor,
-                  ),
-                  child: item.icon,
+              child: IconTheme(
+                data: IconThemeData(
+                  size: iconSize,
+                  color: isSelected
+                      ? item.activeColor.withOpacity(1)
+                      : item.inactiveColor ?? item.activeColor,
                 ),
+                child: item.icon,
               ),
             ),
           ),
-         if(isSelected) Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: DefaultTextStyle.merge(
-              style: TextStyle(
-                color: item.activeColor,
-                fontWeight: FontWeight.bold,
-              ),
-              maxLines: 1,
-              textAlign: item.textAlign,
-              child: item.title,
-            ),
-          ),
+          if (isSelected) item.title
         ],
       ),
     );
