@@ -1,13 +1,12 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/pages/main/bloc/main_bloc.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
-import 'package:mulk_app/core/translations/locale_keys.g.dart';
 import 'package:mulk_app/ui/pages/settings/settings_page.dart';
 import 'package:mulk_app/ui/pages/main/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
@@ -31,6 +30,7 @@ class _MainPageState extends State<MainPage> {
   @override
   void dispose() {
     bloc.close();
+    bloc.audioPlayer.dispose();
     super.dispose();
   }
 
@@ -62,19 +62,19 @@ class _MainPageState extends State<MainPage> {
                       icon: const Icon(CupertinoIcons.settings),
                     ),
                   ],
-                  leading: Builder(
-                    builder: (context) {
-                      return IconButton(
-                        onPressed: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                        tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-                        icon: const Icon(CupertinoIcons.tornado),
-                      );
-                    }
-                  ),
+                  // leading: Builder(
+                  //   builder: (context) {
+                  //     return IconButton(
+                  //       onPressed: () {
+                  //         Scaffold.of(context).openDrawer();
+                  //       },
+                  //       tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                  //       icon: const Icon(CupertinoIcons.tornado),
+                  //     );
+                  //   }
+                  // ),
                 ),
-                drawer: const DrawerWidget(),
+                // drawer: const DrawerWidget(),
                 body: IndexedStack(
                   index: _index,
                   children: [
@@ -122,7 +122,7 @@ class _MainPageState extends State<MainPage> {
                     BottomNavyBarItem(
                       icon: const Icon(CupertinoIcons.square_favorites),
                       title: Text(
-                        LocaleKeys.study.tr(),
+                        Words.main.tr(),
                         style: AppTextStyles.style600.copyWith(fontSize: 16),
                       ),
                       activeColor: Provider.of<ThemeProvider>(context).isDark
@@ -132,7 +132,7 @@ class _MainPageState extends State<MainPage> {
                     BottomNavyBarItem(
                       icon: const Icon(CupertinoIcons.book),
                       title: Text(
-                        LocaleKeys.read.tr(),
+                        Words.tafserTitle.tr(),
                         style: AppTextStyles.style600.copyWith(fontSize: 16),
                       ),
                       activeColor: Provider.of<ThemeProvider>(context).isDark

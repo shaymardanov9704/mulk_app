@@ -24,16 +24,17 @@ class DrawerWidget extends StatelessWidget {
             ],
           ),
           ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                backgroundColor: Colors.transparent,
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-              onPressed: () {
-                LanguageDialog(context: context).show();
-              },
-              child: Text(Words.changeLanguage.tr())),
+              backgroundColor: Colors.transparent,
+            ),
+            onPressed: () {
+              LanguageDialog(context: context).show();
+            },
+            child: Text(Words.changeLanguage.tr()),
+          ),
         ],
       ),
     );

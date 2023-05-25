@@ -13,6 +13,7 @@ class AppThemes {
       colorScheme: const ColorScheme.light(),
       brightness: Brightness.light,
       hintColor: AppColors.white,
+      secondaryHeaderColor: AppColors.black,
       iconTheme: IconThemeData(color: AppColors.black, opacity: 0.8),
       useMaterial3: true,
       appBarTheme: AppBarTheme(
@@ -25,6 +26,7 @@ class AppThemes {
           statusBarBrightness: Brightness.light,
         ),
         elevation: 0,
+        surfaceTintColor: AppColors.lightBackground,
         titleTextStyle: AppTextStyles.style600.copyWith(
           color: AppColors.black,
           fontSize: 22,
@@ -46,12 +48,14 @@ class AppThemes {
       colorScheme: const ColorScheme.dark(),
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.darkBackground,
+      secondaryHeaderColor: AppColors.white,
       iconTheme: IconThemeData(color: AppColors.white, opacity: 0.8),
       useMaterial3: true,
       appBarTheme: AppBarTheme(
         iconTheme: IconThemeData(color: AppColors.white, opacity: 0.8),
         backgroundColor: AppColors.darkBackground,
         centerTitle: true,
+        surfaceTintColor: AppColors.darkBackground,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: AppColors.white,
           statusBarIconBrightness: Brightness.dark,

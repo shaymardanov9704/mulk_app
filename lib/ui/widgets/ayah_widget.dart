@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/translations/locale_keys.g.dart';
+import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/widgets/tafser.dart';
@@ -43,10 +44,10 @@ class _AyahWidgetState extends State<AyahWidget> {
                 : widget.audioPlayer.playing && snapshot.data == widget.number
                     ? Colors.lightGreen.withOpacity(0.4)
                     : Provider.of<ThemeProvider>(context).isDark
-                        ? Colors.black
-                        : Colors.white,
+                        ? AppColors.darkBackground
+                        : AppColors.lightBackground,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(width: 0.5, color: Colors.lightGreen),
+            border: Border.all(width: 0.5, color: AppColors.primary),
           ),
           child: Column(
             children: [
@@ -117,8 +118,10 @@ class _AyahWidgetState extends State<AyahWidget> {
                           : CupertinoIcons.repeat,
                       color: snapshot.data == widget.number &&
                               widget.audioPlayer.loopMode == LoopMode.one
-                          ? Colors.red
-                          : Colors.white,
+                          ? AppColors.red
+                          : Provider.of<ThemeProvider>(context).isDark
+                              ? AppColors.white
+                              : AppColors.black,
                     ),
                   ),
                 ],
