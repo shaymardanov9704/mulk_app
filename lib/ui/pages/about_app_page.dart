@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mulk_app/core/common/words.dart';
 
-class InfoPage extends StatelessWidget {
-  const InfoPage({Key? key}) : super(key: key);
+class AboutAppPage extends StatelessWidget {
+  const AboutAppPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.lightGreen.shade800,
         title: Text(
           Words.info.tr(),
-          style: GoogleFonts.rubik(color: Colors.white, fontSize: 20),
+
         ),
         centerTitle: true,
       ),

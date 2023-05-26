@@ -70,9 +70,8 @@ class _AyahWidgetState extends State<AyahWidget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       Navigator.push(
                         context,
                         CupertinoPageRoute(
@@ -80,7 +79,20 @@ class _AyahWidgetState extends State<AyahWidget> {
                         ),
                       );
                     },
-                    child: const Text("Tafser"),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 5,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          width: 0.6,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                      child: Center(child: Text(Words.tafserTitle.tr())),
+                    ),
                   ),
                   const Expanded(child: SizedBox()),
                   IconButton(

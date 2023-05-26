@@ -16,6 +16,7 @@ class AppIcons {
   static SvgPicture share = SvgPicture.asset("assets/icons/share.svg");
   static SvgPicture earth = SvgPicture.asset("assets/icons/earth.svg");
   static SvgPicture drawer = SvgPicture.asset("assets/icons/drawer.svg");
+  static SvgPicture playStore = SvgPicture.asset("assets/icons/play_store.svg");
   static SvgPicture notification = SvgPicture.asset("assets/icons/notification.svg");
 }
 

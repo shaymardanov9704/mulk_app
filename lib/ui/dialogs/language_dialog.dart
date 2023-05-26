@@ -31,8 +31,8 @@ class LanguageDialog {
                   Text(
                     Words.changeLanguage.tr(),
                     style: AppTextStyles.style600.copyWith(
-                      fontSize: 16,
-                      color: AppColors.white,
+                      fontSize: 20,
+                      letterSpacing: 2,
                     ),
                   ),
                   const SizedBox(height: 12),

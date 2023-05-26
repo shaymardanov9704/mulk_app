@@ -7,6 +7,8 @@ import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/app_icons.dart';
 import 'package:mulk_app/ui/dialogs/language_dialog.dart';
+import 'package:mulk_app/ui/pages/about_app_page.dart';
+import 'package:mulk_app/ui/pages/settings/widgets/toggle_switch.dart';
 import 'package:provider/provider.dart';
 import 'bloc/settings_bloc.dart';
 
@@ -38,19 +40,11 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 const SizedBox(height: 12),
                 _Item(
-                  icon: AppIcons.notification.copyWith(
-                    color: AppColors.white,
-                    width: 30,
-                  ),
-                  title: Words.notification.tr(),
-                  onTap: () {},
-                  toggle: const ToggleSwitch(),
-                ),
-                const SizedBox(height: 12),
-                _Item(
                   icon: AppIcons.moonDark.copyWith(
-                    color: AppColors.white,
-                    width: 30,
+                    color: Provider.of<ThemeProvider>(context).isDark
+                        ? AppColors.white
+                        : AppColors.black,
+                    width: 24,
                   ),
                   title: Words.darkMode.tr(),
                   onTap: () {},
@@ -59,31 +53,55 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 12),
                 _Item(
                   icon: AppIcons.earth.copyWith(
-                    color: AppColors.white,
-                    width: 30,
+                    color: Provider.of<ThemeProvider>(context).isDark
+                        ? AppColors.white
+                        : AppColors.black,
+                    width: 25,
                   ),
                   title: Words.changeLanguage.tr(),
                   onTap: () {
                     LanguageDialog(context: context).show();
                   },
-                  toggle: Text(Words.uz.tr()),
+                  // toggle: Text(Words.uz.tr()),
                 ),
                 const SizedBox(height: 12),
                 _Item(
                   icon: AppIcons.share.copyWith(
-                    color: AppColors.white,
-                    width: 30,
+                    color: Provider.of<ThemeProvider>(context).isDark
+                        ? AppColors.white
+                        : AppColors.black,
+                    width: 25,
                   ),
                   onTap: () {},
                   title: Words.share.tr(),
                 ),
                 const SizedBox(height: 12),
                 _Item(
-                  icon: AppIcons.info.copyWith(
-                    width: 42,
-                    color: AppColors.white,
+                  icon: AppIcons.playStore.copyWith(
+                    color: Provider.of<ThemeProvider>(context).isDark
+                        ? AppColors.white
+                        : AppColors.black,
+                    width: 28,
                   ),
                   onTap: () {},
+                  title: Words.rateApp.tr(),
+                ),
+                const SizedBox(height: 12),
+                _Item(
+                  icon: AppIcons.info.copyWith(
+                    color: Provider.of<ThemeProvider>(context).isDark
+                        ? AppColors.white
+                        : AppColors.black,
+                    width: 34,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (_) => const AboutAppPage(),
+                      ),
+                    );
+                  },
                   title: Words.about.tr(),
                 ),
               ],
@@ -119,12 +137,12 @@ class _Item extends StatelessWidget {
         height: 50,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: Provider.of<ThemeProvider>(context).isDark
-                ? AppColors.darkBackground
-                : AppColors.lightBackground,
-            border: Border.all(width: 0.5, color: AppColors.primary),
-            ),
+          borderRadius: BorderRadius.circular(12),
+          color: Provider.of<ThemeProvider>(context).isDark
+              ? AppColors.darkBackground
+              : AppColors.lightBackground,
+          border: Border.all(width: 0.5, color: AppColors.primary),
+        ),
         child: Row(
           children: [
             SizedBox(width: 42, child: Center(child: icon)),
@@ -133,7 +151,9 @@ class _Item extends StatelessWidget {
               title,
               style: AppTextStyles.style600.copyWith(
                 fontSize: 17,
-                color: AppColors.white,
+                color: Provider.of<ThemeProvider>(context).isDark
+                    ? AppColors.white
+                    : AppColors.black,
               ),
             ),
             const Expanded(child: SizedBox()),
@@ -141,25 +161,6 @@ class _Item extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class ToggleSwitch extends StatelessWidget {
-  const ToggleSwitch({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Provider.of<ThemeProvider>(context);
-    return Switch(
-      value: theme.isDark,
-      activeColor: AppColors.lightBackground,
-      activeTrackColor: AppColors.primary,
-      inactiveTrackColor: AppColors.lightBackground,
-      onChanged: (value) {
-        final provider = Provider.of<ThemeProvider>(context, listen: false);
-        provider.toggleTheme(value);
-      },
     );
   }
 }
