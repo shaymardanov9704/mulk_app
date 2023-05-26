@@ -1,9 +1,7 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/core/common/words.dart';
-import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/app_icons.dart';
 import 'package:mulk_app/ui/pages/main/bloc/main_bloc.dart';
@@ -12,7 +10,6 @@ import 'package:mulk_app/ui/pages/settings/settings_page.dart';
 import 'package:mulk_app/ui/pages/main/tafseer_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
 import 'package:mulk_app/ui/widgets/bottom_navigaion_bar.dart';
-import 'package:mulk_app/ui/widgets/drawer_widget.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
@@ -83,6 +80,7 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(
+                  backgroundColor: AppColors.primary,
                   onPressed: () {
                     state.playerStatus == PlayerStatus.play
                         ? bloc.add(MainEvent.pause())
@@ -94,44 +92,24 @@ class _MainPageState extends State<MainPage> {
                         : CupertinoIcons.play,
                   ),
                 ),
-                bottomNavigationBar: AppBottomNavBar(
+                bottomNavigationBar: AppBottomNavyBar(
                   selectedIndex: _index,
-                  showElevation: false,
                   backgroundColor: Provider.of<ThemeProvider>(context).isDark
                       ? AppColors.darkBackground
                       : AppColors.lightBackground,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   items: [
-                    AppBottomNavBarItem(
-                      icon: AppIcons.mosque.copyWith(color: AppColors.white),
-                      title: Text(
-                        Words.main.tr(),
-                        style: AppTextStyles.style600.copyWith(fontSize: 16),
-                      ),
-                      activeColor: Provider.of<ThemeProvider>(context).isDark
-                          ? AppColors.white
-                          : AppColors.black,
+                    AppBottomNavyBarItem(
+                      path: AppIcons.moon.path,
+                      activeColor: AppColors.primary,
                     ),
-                    AppBottomNavBarItem(
-                      icon: AppIcons.openBook
-                          .copyWith(color: AppColors.white, width: 30),
-                      title: Text(
-                        Words.tafserTitle.tr(),
-                        style: AppTextStyles.style600.copyWith(fontSize: 16),
-                      ),
-                      activeColor: Provider.of<ThemeProvider>(context).isDark
-                          ? AppColors.white
-                          : AppColors.black,
+                    AppBottomNavyBarItem(
+                      path: AppIcons.openBook.path,
+                      activeColor: AppColors.primary,
                     ),
-                    AppBottomNavBarItem(
-                      icon: AppIcons.settings.copyWith(color: AppColors.white),
-                      title: Text(
-                        Words.settings.tr(),
-                        style: AppTextStyles.style600.copyWith(fontSize: 16),
-                      ),
-                      activeColor: Provider.of<ThemeProvider>(context).isDark
-                          ? AppColors.white
-                          : AppColors.black,
+                    AppBottomNavyBarItem(
+                      path: AppIcons.settings.path,
+                      activeColor: AppColors.primary,
                     ),
                   ],
                   onItemSelected: (int value) {
