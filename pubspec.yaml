@@ -29,6 +29,7 @@ dependencies:
   provider: ^6.0.5
   just_audio: ^0.9.33
   flutter_svg: ^1.0.3
+  lottie: ^2.3.2
   get_it:
 
 dev_dependencies:
@@ -48,6 +49,7 @@ flutter:
     - assets/images/
     - assets/tr/
     - assets/icons/
+    - assets/lotties/
 
   fonts:
     - family: Scheherazade

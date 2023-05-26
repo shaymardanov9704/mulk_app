@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mulk_app/di.dart';
 import 'package:mulk_app/core/utils/app_themes.dart';
 import 'package:mulk_app/ui/app.dart';
-import 'package:mulk_app/ui/pages/main/main_page.dart';
+import 'package:mulk_app/ui/pages/splash_page.dart';
 import 'package:provider/provider.dart';
 import 'provider/theme_provider.dart';
 
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       themeMode: context.watch<ThemeProvider>().themeMode,
       theme: AppThemes.light(),
       darkTheme: AppThemes.dark(),
-      home: const MainPage(),
+      home: const SplashPage(),
     );
   }
 }

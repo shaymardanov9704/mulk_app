@@ -53,23 +53,7 @@ class _MainPageState extends State<MainPage> {
             child: SafeArea(
               bottom: false,
               child: Scaffold(
-                appBar: AppBar(
-                  title: Text(titles[_index]),
-                  actions: [
-                    // IconButton(
-                    //   onPressed: () {
-                    //     state.playerStatus == PlayerStatus.play
-                    //         ? bloc.add(MainEvent.pause())
-                    //         : bloc.add(MainEvent.play());
-                    //   },
-                    //   icon: Icon(
-                    //     state.playerStatus == PlayerStatus.play
-                    //         ? CupertinoIcons.pause
-                    //         : CupertinoIcons.play,
-                    //   ),
-                    // )
-                  ],
-                ),
+                appBar: AppBar(title: Text(titles[_index])),
                 body: IndexedStack(
                   index: _index,
                   children: [
@@ -95,7 +79,6 @@ class _MainPageState extends State<MainPage> {
                     const SettingsPage(),
                   ],
                 ),
-
                 bottomNavigationBar: AppBottomNavyBar(
                   selectedIndex: _index,
                   backgroundColor: Provider.of<ThemeProvider>(context).isDark

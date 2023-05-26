@@ -1,16 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/ui/pages/main/main_page.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashPageState extends State<SplashPage> {
   afterSplash() async {
     Future.delayed(
       const Duration(seconds: 3),
@@ -25,7 +27,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     afterSplash();
   }
@@ -33,19 +34,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 200),
-          const Image(
-            image: AssetImage('assets/images/mulk_logo.png'),
+          Center(
+            child: Lottie.asset(
+              "assets/lotties/splash.json",
+              width: MediaQuery.of(context).size.width * 0.6,
+            ),
           ),
+          const SizedBox(height: 12),
           Text(
-            'Al-Mulk',
-            style: AppTextStyles.style700.copyWith(fontSize: 24),
+            Words.title.tr(),
+            style: AppTextStyles.arabic.copyWith(fontSize: 45),
           ),
-          const SizedBox(height: 240),
         ],
       ),
     );
