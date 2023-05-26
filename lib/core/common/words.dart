@@ -6,4 +6,4 @@ extension MyWords on Words {
   }
 }
 
-enum Words {about, ayah, basmala, changeLanguage, cyr, darkMode, en, firstT, info, infoList, lan, lightMode, main, read, ru, settings, study, tafser, tafserTitle, title, uz}
+enum Words {about, ayah, basmala, changeLanguage, cyr, darkMode, en, firstT, info, infoList, lan, lightMode, main, notification, read, ru, settings, share, study, tafser, tafserTitle, title, uz}

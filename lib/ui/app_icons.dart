@@ -10,8 +10,13 @@ class AppIcons {
   static SvgPicture settings = SvgPicture.asset("assets/icons/settings.svg");
   static SvgPicture back = SvgPicture.asset("assets/icons/back.svg");
   static SvgPicture moon = SvgPicture.asset("assets/icons/moon.svg");
+  static SvgPicture moonDark = SvgPicture.asset("assets/icons/moon_dark.svg");
   static SvgPicture bookI = SvgPicture.asset("assets/icons/book_i.svg");
+  static SvgPicture info = SvgPicture.asset("assets/icons/info.svg");
+  static SvgPicture share = SvgPicture.asset("assets/icons/share.svg");
+  static SvgPicture earth = SvgPicture.asset("assets/icons/earth.svg");
   static SvgPicture drawer = SvgPicture.asset("assets/icons/drawer.svg");
+  static SvgPicture notification = SvgPicture.asset("assets/icons/notification.svg");
 }
 
 extension CustomSvg on SvgPicture {

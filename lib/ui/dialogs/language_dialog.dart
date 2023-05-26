@@ -29,7 +29,7 @@ class LanguageDialog {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    Words.lan.tr(),
+                    Words.changeLanguage.tr(),
                     style: AppTextStyles.style600.copyWith(
                       fontSize: 16,
                       color: AppColors.white,

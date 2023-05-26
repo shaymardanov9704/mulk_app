@@ -25,7 +25,8 @@ class AppThemes {
           statusBarIconBrightness: Brightness.light,
           statusBarBrightness: Brightness.light,
         ),
-        elevation: 0,
+        elevation: 0.6,
+        shadowColor: AppColors.primary.withOpacity(0.6),
         surfaceTintColor: AppColors.lightBackground,
         titleTextStyle: AppTextStyles.style600.copyWith(
           color: AppColors.black,
@@ -61,7 +62,8 @@ class AppThemes {
           statusBarIconBrightness: Brightness.dark,
           statusBarBrightness: Brightness.dark,
         ),
-        elevation: 0,
+        elevation: 0.6,
+        shadowColor: AppColors.primary.withOpacity(0.6),
         titleTextStyle: AppTextStyles.style600.copyWith(
           color: AppColors.white,
           fontSize: 22,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/ui/dialogs/language_dialog.dart';
-import 'package:mulk_app/ui/widgets/btn.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -20,7 +19,6 @@ class DrawerWidget extends StatelessWidget {
                 Words.changeLanguage.tr(),
                 style: AppTextStyles.style600,
               ),
-              const Btn(),
             ],
           ),
           ElevatedButton(

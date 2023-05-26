@@ -5,8 +5,8 @@ import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
+import 'package:mulk_app/ui/app_icons.dart';
 import 'package:mulk_app/ui/dialogs/language_dialog.dart';
-import 'package:mulk_app/ui/widgets/btn.dart';
 import 'package:provider/provider.dart';
 import 'bloc/settings_bloc.dart';
 
@@ -33,56 +33,133 @@ class _SettingsPageState extends State<SettingsPage> {
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(
-              title: const Text("Settings"),
-            ),
             body: ListView(
               padding: const EdgeInsets.all(10),
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      Words.darkMode.tr(),
-                      style: AppTextStyles.style600.copyWith(fontSize: 16),
-                    ),
-                    const Btn(),
-                  ],
+                const SizedBox(height: 12),
+                _Item(
+                  icon: AppIcons.notification.copyWith(
+                    color: AppColors.white,
+                    width: 30,
+                  ),
+                  title: Words.notification.tr(),
+                  onTap: () {},
+                  toggle: const ToggleSwitch(),
                 ),
-                ElevatedButton(
-                  onPressed: () async {
+                const SizedBox(height: 12),
+                _Item(
+                  icon: AppIcons.moonDark.copyWith(
+                    color: AppColors.white,
+                    width: 30,
+                  ),
+                  title: Words.darkMode.tr(),
+                  onTap: () {},
+                  toggle: const ToggleSwitch(),
+                ),
+                const SizedBox(height: 12),
+                _Item(
+                  icon: AppIcons.earth.copyWith(
+                    color: AppColors.white,
+                    width: 30,
+                  ),
+                  title: Words.changeLanguage.tr(),
+                  onTap: () {
                     LanguageDialog(context: context).show();
                   },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)
-                    )
+                  toggle: Text(Words.uz.tr()),
+                ),
+                const SizedBox(height: 12),
+                _Item(
+                  icon: AppIcons.share.copyWith(
+                    color: AppColors.white,
+                    width: 30,
                   ),
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Provider.of<ThemeProvider>(context).isDark
-                          ? AppColors.darkBackground
-                          : AppColors.lightBackground,
-                    ),
-                    child: Center(
-                      child: Text(
-                        Words.changeLanguage.tr(),
-                        style: AppTextStyles.style500.copyWith(
-                          color: AppColors.primary,
-                        ),
-                      ),
-                    ),
+                  onTap: () {},
+                  title: Words.share.tr(),
+                ),
+                const SizedBox(height: 12),
+                _Item(
+                  icon: AppIcons.info.copyWith(
+                    width: 42,
+                    color: AppColors.white,
                   ),
+                  onTap: () {},
+                  title: Words.about.tr(),
                 ),
               ],
             ),
           );
         },
       ),
+    );
+  }
+}
+
+class _Item extends StatelessWidget {
+  final Widget icon;
+  final String title;
+  final Widget? toggle;
+  final Function() onTap;
+
+  const _Item({
+    Key? key,
+    required this.icon,
+    required this.title,
+    this.toggle,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        width: double.infinity,
+        height: 50,
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: Provider.of<ThemeProvider>(context).isDark
+                ? AppColors.darkBackground
+                : AppColors.lightBackground,
+            border: Border.all(width: 0.5, color: AppColors.primary),
+            ),
+        child: Row(
+          children: [
+            SizedBox(width: 42, child: Center(child: icon)),
+            const SizedBox(width: 8),
+            Text(
+              title,
+              style: AppTextStyles.style600.copyWith(
+                fontSize: 17,
+                color: AppColors.white,
+              ),
+            ),
+            const Expanded(child: SizedBox()),
+            toggle ?? const SizedBox()
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ToggleSwitch extends StatelessWidget {
+  const ToggleSwitch({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeProvider>(context);
+    return Switch(
+      value: theme.isDark,
+      activeColor: AppColors.lightBackground,
+      activeTrackColor: AppColors.primary,
+      inactiveTrackColor: AppColors.lightBackground,
+      onChanged: (value) {
+        final provider = Provider.of<ThemeProvider>(context, listen: false);
+        provider.toggleTheme(value);
+      },
     );
   }
 }
