@@ -5,7 +5,7 @@ import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/core/utils/app_text_styles.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
-import 'package:mulk_app/ui/widgets/tafser.dart';
+import 'package:mulk_app/ui/pages/tafser/simple_tafser.dart';
 import 'package:provider/provider.dart';
 import 'package:quran/quran.dart' as quran;
 

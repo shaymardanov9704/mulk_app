@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/core/common/words.dart';
@@ -7,7 +6,7 @@ import 'package:mulk_app/ui/app_icons.dart';
 import 'package:mulk_app/ui/pages/main/bloc/main_bloc.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/ui/pages/settings/settings_page.dart';
-import 'package:mulk_app/ui/pages/main/tafseer_page.dart';
+import 'package:mulk_app/ui/pages/tafser/tafser_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
 import 'package:mulk_app/ui/widgets/bottom_navigaion_bar.dart';
 import 'package:provider/provider.dart';
