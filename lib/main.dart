@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:mulk_app/di.dart';
 import 'package:mulk_app/core/utils/app_themes.dart';
 import 'package:mulk_app/ui/app.dart';
-import 'package:mulk_app/ui/pages/splash_page.dart';
 import 'package:provider/provider.dart';
 import 'provider/theme_provider.dart';
+import 'ui/pages/splash/splash_page.dart';
 
 void main() async {
   runZonedGuarded(() async {
