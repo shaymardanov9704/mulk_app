@@ -4,9 +4,12 @@ import 'package:mulk_app/core/hive/cache_hive.dart';
 class ThemeProvider extends ChangeNotifier {
   final CacheHive _hive;
 
-  ThemeProvider(this._hive);
+  ThemeProvider(this._hive) {
+    themeMode = _hive.themeMode;
+    notifyListeners();
+  }
 
-  ThemeMode themeMode = ThemeMode.dark;
+  ThemeMode themeMode = ThemeMode.light;
 
   bool get isDark => themeMode == ThemeMode.dark;
 
