@@ -44,7 +44,8 @@ class LanguageItemWidget extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: AppTextStyles.style500.copyWith(
+            style: AppTextStyles.style600.copyWith(
+              fontSize: 16,
               color: Provider.of<ThemeProvider>(context).isDark
                   ? context.locale == locale
                       ? AppColors.primary

@@ -21,43 +21,43 @@ class LanguageDialog {
           return Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.width * 0.8,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Provider.of<ThemeProvider>(context).isDark
-                      ? AppColors.darkBackground
-                      : AppColors.lightBackground),
-              child: Scaffold(
-                body: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      Words.changeLanguage.tr(),
-                      style: AppTextStyles.style600.copyWith(
-                        fontSize: 20,
-                        letterSpacing: 2,
-                      ),
+                borderRadius: BorderRadius.circular(12),
+                color: Provider.of<ThemeProvider>(context).isDark
+                    ? AppColors.darkBackground
+                    : AppColors.lightBackground,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 12),
+                  Text(
+                    Words.changeLanguage.tr(),
+                    style: AppTextStyles.style600.copyWith(
+                      fontSize: 20,
+                      letterSpacing: 2,
                     ),
-                    const SizedBox(height: 12),
-                    LanguageItemWidget(
-                      locale: context.supportedLocales[0],
-                      title: Words.uz.tr(),
-                    ),
-                    LanguageItemWidget(
-                      locale: context.supportedLocales[1],
-                      title: Words.cyr.tr(),
-                    ),
-                    LanguageItemWidget(
-                      locale: context.supportedLocales[2],
-                      title: Words.ru.tr(),
-                    ),
-                    LanguageItemWidget(
-                      locale: context.supportedLocales[3],
-                      title: Words.en.tr(),
-                    ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 20),
+                  LanguageItemWidget(
+                    locale: context.supportedLocales[0],
+                    title: Words.uz.tr(),
+                  ),
+                  LanguageItemWidget(
+                    locale: context.supportedLocales[1],
+                    title: Words.cyr.tr(),
+                  ),
+                  LanguageItemWidget(
+                    locale: context.supportedLocales[2],
+                    title: Words.ru.tr(),
+                  ),
+                  LanguageItemWidget(
+                    locale: context.supportedLocales[3],
+                    title: Words.en.tr(),
+                  ),
+                ],
               ),
             ),
           );

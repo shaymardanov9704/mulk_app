@@ -40,7 +40,10 @@ class _LanguagePageState extends State<LanguagePage> {
             const SizedBox(height: 20),
             Text(
               Words.chooseLang.tr(),
-              style: AppTextStyles.style600.copyWith(fontSize: 22),
+              style: AppTextStyles.style700.copyWith(
+                fontSize: 22,
+                letterSpacing: 2,
+              ),
             ),
             const SizedBox(height: 10),
             Text(
