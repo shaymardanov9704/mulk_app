@@ -10,6 +10,7 @@ import 'package:mulk_app/ui/pages/about_app/about_app_page.dart';
 import 'package:mulk_app/ui/widgets/settings_item_widget.dart';
 import 'package:mulk_app/ui/widgets/toggle_switch.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'bloc/settings_bloc.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -72,7 +73,9 @@ class _SettingsPageState extends State<SettingsPage> {
                         : AppColors.black,
                     width: 25,
                   ),
-                  onTap: () {},
+                  onTap: () async {
+                    await Share.share("App", subject: "Mulk App");
+                  },
                   title: Words.share.tr(),
                 ),
                 const SizedBox(height: 12),
