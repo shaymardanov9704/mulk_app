@@ -50,7 +50,7 @@ class Tafser extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             Text(
-              number == 0 ? Words.firstT.tr() : Words.tafser.tr(number),
+              number == 0 ? Words.firstTafser.tr() : Words.tafser.tr(number),
               style: AppTextStyles.style600.copyWith(fontSize: 16),
             ),
           ],
