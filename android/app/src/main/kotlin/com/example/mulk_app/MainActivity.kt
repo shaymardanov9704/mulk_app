@@ -1,4 +1,4 @@
-package com.example.mulk_app
+package com.mulk_app
 
 import io.flutter.embedding.android.FlutterActivity
 
