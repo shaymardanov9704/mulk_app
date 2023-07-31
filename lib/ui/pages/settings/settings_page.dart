@@ -90,8 +90,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     width: 28,
                   ),
                   onTap: () async {
-                    final Uri _url = Uri.parse("https://play.google.com/store/apps/details?id=com.mulk_app&pli=1");
-                    await launchUrl(_url);
+                    final Uri _url = Uri.parse(
+                        "https://play.google.com/store/apps/details?id=com.mulk_app&pli=1");
+                    await launchUrl(_url, mode: LaunchMode.externalApplication);
                   },
                   title: Words.rateApp.tr(),
                 ),
