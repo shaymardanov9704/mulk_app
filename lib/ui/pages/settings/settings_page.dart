@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/core/common/words.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:mulk_app/core/utils/app_colors.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/app_icons.dart';
@@ -74,7 +75,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     width: 25,
                   ),
                   onTap: () async {
-                    await Share.share("App", subject: "Mulk App");
+                    await Share.share(
+                        "https://play.google.com/store/apps/details?id=com.mulk_app&pli=1",
+                        subject: "Mulk App");
                   },
                   title: Words.share.tr(),
                 ),
@@ -86,7 +89,10 @@ class _SettingsPageState extends State<SettingsPage> {
                         : AppColors.black,
                     width: 28,
                   ),
-                  onTap: () {},
+                  onTap: () async {
+                    final Uri _url = Uri.parse("https://play.google.com/store/apps/details?id=com.mulk_app&pli=1");
+                    await launchUrl(_url);
+                  },
                   title: Words.rateApp.tr(),
                 ),
                 const SizedBox(height: 12),
