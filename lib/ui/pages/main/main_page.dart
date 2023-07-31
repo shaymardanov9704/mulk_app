@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mulk_app/core/common/words.dart';
 import 'package:mulk_app/provider/theme_provider.dart';
@@ -9,6 +11,7 @@ import 'package:mulk_app/ui/pages/settings/settings_page.dart';
 import 'package:mulk_app/ui/pages/tafser/tafser_page.dart';
 import 'package:mulk_app/ui/widgets/ayah_widget.dart';
 import 'package:mulk_app/ui/widgets/bottom_navigaion_bar.dart';
+import 'package:mulk_app/ui/widgets/exit_dialog.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
@@ -53,30 +56,40 @@ class _MainPageState extends State<MainPage> {
               bottom: false,
               child: Scaffold(
                 appBar: AppBar(title: Text(titles[_index])),
-                body: IndexedStack(
-                  index: _index,
-                  children: [
-                    ListView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      itemCount: 31,
-                      itemBuilder: (_, i) {
-                        return AyahWidget(
-                          number: i,
-                          onPlay: () {
-                            state.playerStatus == PlayerStatus.play
-                                ? bloc.add(MainEvent.pause())
-                                : bloc.add(MainEvent.playAtIndex(index: i));
-                          },
-                          onLoop: () {
-                            bloc.add(MainEvent.loopMode());
-                          },
-                          audioPlayer: bloc.audioPlayer,
-                        );
-                      },
-                    ),
-                    const TafseerPage(),
-                    const SettingsPage(),
-                  ],
+                body: WillPopScope(
+                  onWillPop: () async {
+                    showCupertinoDialog(
+                        context: context,
+                        builder: (_) {
+                          return ExitDialog(ok: () => SystemNavigator.pop());
+                        });
+                    return false;
+                  },
+                  child: IndexedStack(
+                    index: _index,
+                    children: [
+                      ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        itemCount: 31,
+                        itemBuilder: (_, i) {
+                          return AyahWidget(
+                            number: i,
+                            onPlay: () {
+                              state.playerStatus == PlayerStatus.play
+                                  ? bloc.add(MainEvent.pause())
+                                  : bloc.add(MainEvent.playAtIndex(index: i));
+                            },
+                            onLoop: () {
+                              bloc.add(MainEvent.loopMode());
+                            },
+                            audioPlayer: bloc.audioPlayer,
+                          );
+                        },
+                      ),
+                      const TafseerPage(),
+                      const SettingsPage(),
+                    ],
+                  ),
                 ),
                 bottomNavigationBar: AppBottomNavyBar(
                   selectedIndex: _index,

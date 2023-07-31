@@ -8,8 +8,6 @@ import 'package:provider/provider.dart';
 import 'provider/theme_provider.dart';
 import 'ui/pages/splash/splash_page.dart';
 
-// 3. Chiqib ketish dialog
-//
 // 4. Introduction pages
 //
 // 5. Update
