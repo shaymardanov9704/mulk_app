@@ -8,6 +8,7 @@ import 'package:mulk_app/provider/theme_provider.dart';
 import 'package:mulk_app/ui/pages/tafser/simple_tafser.dart';
 import 'package:provider/provider.dart';
 import 'package:quran/quran.dart' as quran;
+import 'package:share_plus/share_plus.dart';
 
 class AyahWidget extends StatefulWidget {
   final int number;
@@ -109,7 +110,12 @@ class _AyahWidgetState extends State<AyahWidget> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await Share.share(
+                        "${quran.getVerse(67, widget.number)} \n${Words.ayah.tr(widget.number)} (67:${widget.number}) \n\n--------------------------------------------------- \n\nhttps://play.google.com/store/apps/details?id=com.mulk_app&pli=1",
+                        subject: Words.ayah.tr(widget.number),
+                      );
+                    },
                     padding: EdgeInsets.zero,
                     icon: const Icon(Icons.share),
                   ),
