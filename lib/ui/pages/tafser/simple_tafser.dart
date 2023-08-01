@@ -15,7 +15,9 @@ class Tafser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Mulk (67:$number) tafser"),
+        title: Text(number == 0
+            ? Words.tafserTitle.tr()
+            : " ${Words.tafserTitle.tr()} - $number"),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(8.0),
@@ -59,3 +61,5 @@ class Tafser extends StatelessWidget {
     );
   }
 }
+
+///number == 0?"":
