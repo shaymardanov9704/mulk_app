@@ -49,14 +49,6 @@ class LanguageDialog {
                     locale: context.supportedLocales[1],
                     title: Words.cyr.tr(),
                   ),
-                  LanguageItemWidget(
-                    locale: context.supportedLocales[2],
-                    title: Words.ru.tr(),
-                  ),
-                  LanguageItemWidget(
-                    locale: context.supportedLocales[3],
-                    title: Words.en.tr(),
-                  ),
                 ],
               ),
             ),

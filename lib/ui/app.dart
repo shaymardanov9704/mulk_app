@@ -25,8 +25,6 @@ class App extends StatelessWidget {
         supportedLocales: const [
           Locale("uz", "UZ"),
           Locale("uz", "CYR"),
-          Locale("ru", "RU"),
-          Locale("en", "EN"),
         ],
         path: 'assets/tr',
         fallbackLocale: const Locale("uz", "UZ"),
